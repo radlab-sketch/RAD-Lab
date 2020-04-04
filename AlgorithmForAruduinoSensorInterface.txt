@@ -1,0 +1,22 @@
+/*This program sets the sensor communication protocol to UART and will have 2 modes continuous update mode and Query mode
+  in continuous update mode the sensor continuosly gives readings according to the interval set
+  in query mode the sensor will give reading only when the user asks for
+*/
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  // SET communication interface of the sensor to UART
+  // SET command is $01,CIU*//\r\n
+  // give delay of 500ms since the sensor takes 400ms minimum to process a SET command
+  // QUERY to check if the communication protocol is set or not
+  // Query Command is $01,CI?*//\r\n
+  // give delay of little more than 50ms for the sensor to process a QUERY
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  // send query for WIND speed and direction
+  // Query command is $01,WV?*//\r\n
+  // give delay of 200ms for sensor to process Query
+
+}
